@@ -1,83 +1,141 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Mathematical Operations</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATHEMATICAL OPERATION</title>
+    <script type="text/javascript"> 
+        function add(){
+            var num1;
+            var num2;
+            var ans;
+            var no1;
+            var no2;
 
-    <script>
-      function getValues() {
-        let num1 = parseFloat(document.getElementById("num1").value);
-        let num2 = parseFloat(document.getElementById("num2").value);
+           num1 = document.myForm.n1.value;
+            no1 = parseInt(num1);
+            alert = (no1);
+        
+            num2 = document.myForm.n1.value;
+            no2 = parseInt(num2);
+            alert = (no2);
+            
+            ans = (no1 + no2);
+            document.myForm.ans.value = ans;
 
-        if (isNaN(num1) || isNaN(num2)) {
-          alert("Please enter valid numbers.");
-          return null;
         }
+            function subtract(){
+            var num1;
+            var num2;
+            var ans;
+            var no1;
+            var no2;
 
-        return { num1, num2 };
-      }
+           num1 = document.myForm.n1.value;
+            no1 = parseInt(num1);
+           
+            num2 = document.myForm.n1.value;
+            no2 = parseInt(num2);
+           
+            
+            ans = (no1 - no2);
+            document.myForm.ans.value = ans;
 
-      function add() {
-        let values = getValues();
-        if (!values) return;
-
-        let result = values.num1 + values.num2;
-        document.getElementById("answer").value = result;
-      }
-
-      function subtract() {
-        let values = getValues();
-        if (!values) return;
-
-        let result = values.num1 - values.num2;
-        document.getElementById("answer").value = result;
-      }
-
-      function multiply() {
-        let values = getValues();
-        if (!values) return;
-
-        let result = values.num1 * values.num2;
-        document.getElementById("answer").value = result;
-      }
-
-      function divide() {
-        let values = getValues();
-        if (!values) return;
-
-        if (values.num2 === 0) {
-          alert("Cannot divide by zero.");
-          return;
         }
+                function multiply(){
+            var num1;
+            var num2;
+            var ans;
+            var no1;
+            var no2;
 
-        let result = values.num1 / values.num2;
-        document.getElementById("answer").value = result;
-      }
+           num1 = document.myForm.n1.value;
+            no1 = parseInt(num1);
+           
+        
+            num2 = document.myForm.n1.value;
+            no2 = parseInt(num2);
+            
+            
+            ans = (no1 * no2);
+            document.myForm.ans.value = ans;
 
-      function power() {
-        let values = getValues();
-        if (!values) return;
+        }
+                function divide(){
+            var num1;
+            var num2;
+            var ans;
+            var no1;
+            var no2;
 
-        let result = Math.pow(values.num1, values.num2);
-        document.getElementById("answer").value = result;
-      }
+           num1 = document.myForm.n1.value;
+            no1 = parseInt(num1);
+           
+        
+            num2 = document.myForm.n1.value;
+            no2 = parseInt(num2);
+      
+            
+            ans = (no1 / no2);
+            document.myForm.ans.value = ans;
+
+        }
+                function power(){
+            var num1;
+            var num2;
+            var ans;
+            var no1;
+            var no2;
+
+           num1 = document.myForm.n1.value;
+            no1 = parseInt(num1);
+            
+        
+            num2 = document.myForm.n1.value;
+            no2 = parseInt(num2);
+            
+            
+
+
+            
+
+                }
     </script>
-  </head>
+</head>
 
-  <body>
-    <center>
-      <h2>Mathematical Operations</h2>
+<body>
+    
+  <form name="myForm" center>
 
-      First Number <input type="text" id="num1" /><br /><br />
-      Second Number <input type="text" id="num2" /><br /><br />
-      Answer <input type="text" id="answer" readonly /><br /><br />
+    <table>
+        <tr>
+            <td>First Name: </td>
+            <td>&nbsp;</td>
+            <td><input type="text" name = "n1"></td>
+        </tr>
+      
+        <tr>
+            <td>Second Number: </td>
+            <td>&nbsp;</td>
+            <td><input type="text" name = "n2"></td>
+        </tr>
+      
+        <tr>
+            <td>ans: </td>
+           <td>&nbsp;</td>
+            <td><input type="text" name = "ans" disabled></td>
+        </tr>
+             </table>
+    
+        <br>
+                  <b>Click Operation to Perform</b> 
+        <br> <br>
+                <input type = "button" value = "add" onclick ="add()">
+                 <input type = "button" value = "substract" onclick ="subtract()">
+                  <input type = "button" value = "divide" onclick ="multiply()">
+                   <input type = "button" value = "divide" onclick ="divide()">
+                   <input type = "button" value = "power" onclick ="power()">
 
-      Click Operation to Perform<br /><br />
-
-      <button onclick="add()">Add</button>
-      <button onclick="subtract()">Subtract</button>
-      <button onclick="multiply()">Multiply</button>
-      <button onclick="divide()">Divide</button>
-      <button onclick="power()">Power</button>
-    </center>
-  </body>
+    
+</body> 
 </html>
