@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mathematical Operations</title>
+
+    <script>
+      function getValues() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Please enter valid numbers.");
+          return null;
+        }
+
+        return { num1, num2 };
+      }
+
+      function add() {
+        let values = getValues();
+        if (!values) return;
+
+        let result = values.num1 + values.num2;
+        document.getElementById("answer").value = result;
+      }
+
+      function subtract() {
+        let values = getValues();
+        if (!values) return;
+
+        let result = values.num1 - values.num2;
+        document.getElementById("answer").value = result;
+      }
+
+      function multiply() {
+        let values = getValues();
+        if (!values) return;
+
+        let result = values.num1 * values.num2;
+        document.getElementById("answer").value = result;
+      }
+
+      function divide() {
+        let values = getValues();
+        if (!values) return;
+
+        if (values.num2 === 0) {
+          alert("Cannot divide by zero.");
+          return;
+        }
+
+        let result = values.num1 / values.num2;
+        document.getElementById("answer").value = result;
+      }
+
+      function power() {
+        let values = getValues();
+        if (!values) return;
+
+        let result = Math.pow(values.num1, values.num2);
+        document.getElementById("answer").value = result;
+      }
+    </script>
+  </head>
+
+  <body>
+    <center>
+      <h2>Mathematical Operations</h2>
+
+      First Number <input type="text" id="num1" /><br /><br />
+      Second Number <input type="text" id="num2" /><br /><br />
+      Answer <input type="text" id="answer" readonly /><br /><br />
+
+      Click Operation to Perform<br /><br />
+
+      <button onclick="add()">Add</button>
+      <button onclick="subtract()">Subtract</button>
+      <button onclick="multiply()">Multiply</button>
+      <button onclick="divide()">Divide</button>
+      <button onclick="power()">Power</button>
+    </center>
+  </body>
+</html>
